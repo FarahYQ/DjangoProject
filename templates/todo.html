@@ -1,1 +1,6 @@
 <h1>Got lots to do!</h1>
+<ul>
+    {% for item in all_items %}
+        <li><h4>{{item.title}}:</h4> {{item.content}}</li>
+    {% endfor %}
+</ul>
