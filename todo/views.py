@@ -10,3 +10,8 @@ def addTodo(request):
     new_item = TodoItem(title=request.POST['title'], content=request.POST['content'])
     new_item.save()
     return HttpResponseRedirect('/todo/')
+
+def deleteTodo(request, todo_id):
+    to_be_removed = TodoItem.objects.get(id=todo_id)
+    to_be_removed.delete()
+    return HttpResponseRedirect('/todo/')

@@ -1,7 +1,13 @@
 <h1>Got lots to do!</h1>
 <ul>
     {% for item in all_items %}
-        <li><h4>{{item.title}}:</h4> {{item.content}}</li>
+        <li>
+            <h4>{{item.title}}:</h4> 
+            {{item.content}}
+            <form action="/deleteTodo/{{item.id}}/">
+                <input type="submit" value="Delete">
+            </form>
+        </li>
     {% endfor %}
 </ul>
 
